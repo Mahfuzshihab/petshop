@@ -36,15 +36,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <h2>The Ultimate Pet Shop</h2>
 
     <form method="POST">
-        <label>Pet Name:</label>
-        <input type="text" name="name" required>
+        <input type="text" name="name" placeholder="Pet Name" required>
 
-        <label>Pet Age:</label>
-        <input type="number" name="age" required>
+        <input type="number" name="age" placeholder="Pet Age" required>
 
-        <label>Pet Type:</label>
         <select name="type" required>
-            <option value="">-- Select --</option>
+            <option value="">Pet type</option>
             <option value="dog">Dog</option>
             <option value="cat">Cat</option>
             <option value="bird">Bird</option>
@@ -58,8 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <h3>Your Pets:</h3>
     <?php if ($pet): ?>
         <div class="pet-card">
-            <p><strong><?= $pet->greet() ?></strong></p>
-            <p><em><?= $pet->action() ?></em></p>
+            <p><b><?= $pet->greet() ?></b></p>
+            <p><?= $pet->action() ?></p>
         </div>
     <?php endif; ?>
 
